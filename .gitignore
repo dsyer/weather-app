@@ -11,3 +11,4 @@
 target
 
 src/main/resources/application-secrets.properties
+/.apt_generated/
