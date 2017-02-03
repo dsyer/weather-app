@@ -10,7 +10,7 @@
     <div id="twitter"><a href="https://twitter.com/spring1platform">@spring1platform</a></div>
 	<h1>Weather Summary</h1>
 	<ul>
-		{{#summary}}
+		{{#each summary}}
 		<li>
 			<h2>{{city}}, {{country}}</h2>
 			<div>
@@ -19,7 +19,7 @@
 			</div>
 			<div style="clear: both;"></div>
 		</li>
-		{{/summary}}
+		{{/each}}
 	</ul>
 
 </body>
