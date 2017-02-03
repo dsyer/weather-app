@@ -1,18 +1,16 @@
 package com.example.weather.web;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.example.weather.WeatherAppProperties;
-import com.example.weather.integration.ows.Weather;
-import com.example.weather.integration.ows.WeatherService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.example.weather.WeatherAppProperties;
+import com.example.weather.integration.ows.Weather;
+import com.example.weather.integration.ows.WeatherService;
 
 @Controller
 @RequestMapping("/")
@@ -28,10 +26,9 @@ public class WeatherSummaryController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView conferenceWeather() {
-		Map<String, Object> model = new LinkedHashMap<>();
+	public String conferenceWeather(Map<String, Object> model) {
 		model.put("summary", getSummary());
-		return new ModelAndView("summary", model);
+		return "summary";
 	}
 
 	private Object getSummary() {
