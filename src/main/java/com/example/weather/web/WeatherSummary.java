@@ -2,7 +2,7 @@ package com.example.weather.web;
 
 import com.example.weather.integration.ows.Weather;
 
-class WeatherSummary {
+public class WeatherSummary {
 
 	private final String country;
 

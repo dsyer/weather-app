@@ -22,8 +22,11 @@ public class WeatherApp {
     public ScriptTemplateConfigurer configurer() {
         ScriptTemplateConfigurer configurer = new ScriptTemplateConfigurer();
         configurer.setEngineName("nashorn");
-        configurer.setScripts("/META-INF/resources/webjars/mustachejs/2.2.1/mustache.min.js", "/static/js/render.js");
+
+
+        configurer.setScripts("/static/js/polyfill.js", "/META-INF/resources/webjars/handlebars/3.0.0-1/handlebars.js", "/static/js/render.js");
         configurer.setRenderFunction("render");
+        configurer.setSharedEngine(false);
         return configurer;
     }
 
